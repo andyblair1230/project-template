@@ -1,0 +1,11 @@
+site_name: Project Docs
+site_description: Documentation for this project
+repo_url: https://github.com/andyblair1230/project-template
+theme:
+  name: material
+nav:
+  - Home: index.md
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true

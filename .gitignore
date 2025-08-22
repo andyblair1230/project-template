@@ -25,3 +25,6 @@ out/
 # IDE/editor settings
 .vscode/
 .idea/
+
+# MkDocs build output
+site/
