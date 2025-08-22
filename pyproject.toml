@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project-name"
+version = "0.1.0"
+description = "Short project description here"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Andy Blair", email = "jablair1230@gmail.com" }
+]
+license = { file = "LICENSE" }
+
+[tool.pytest.ini_options]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 88
