@@ -1,104 +1,55 @@
-# Project Name
+# Project Template
 
-## 🚀 Quickstart
+Language-agnostic Cookiecutter template with optional stacks (Python, Node/TS, Go, Rust), cross-platform tasks (Windows batch + POSIX shell), and ready-to-run CI for Linux and Windows.
 
-``powershell
-# create a new project from this template
-C:\dev\project-template\NewProject.bat
+## What this repo is
+This is the TEMPLATE. You use it to generate new projects. The generated project will have its own README tailored to the stacks you choose.
 
-# activate virtual environment
-.venv\Scripts\activate
+## Use this template
 
-# run tasks
-tasks.bat lint
-tasks.bat test
-tasks.bat run
-tasks.bat version
+Option A — GitHub button:
+1) Click “Use this template” → “Create a new repository”
+2) Clone your new repo and follow its README (auto-generated)
 
-# docs
-python -m mkdocs serve
-``
+Option B — Cookiecutter (recommended for options):
+1) Install Cookiecutter in any Python 3.12+ environment:
+    pip install cookiecutter
+2) Generate a project:
+    cookiecutter https://github.com/andyblair1230/project-template
+3) Answer prompts (project name, stacks, CI, docs, etc.)
+4) cd into the new folder and follow its README
 
----
+## Template options (prompts)
+- use_python (y/n)
+- use_node (y/n)
+- use_go (y/n)
+- use_rust (y/n)
+- use_mkdocs (y/n)
+- use_ci (y/n)
+- use_devcontainer (y/n)
+- init_git (y/n)
+- license (MIT / Apache-2.0 / Unlicense / Proprietary)
 
-## Using this template
+## What gets generated
+- Cross-platform task runners: `tasks.bat` (Windows) and `tasks.sh` (macOS/Linux)
+- Optional stacks (only what you select):
+  - Python: `pyproject.toml`, `src/`, `tests/`
+  - Node/TS: `package.json`, `src/`, `tests/`
+  - Go: `go.mod`, `cmd/…`, `internal/`
+  - Rust: `Cargo.toml`, `src/`, `tests/`
+- CI: `.github/workflows/ci-linux.yml` and `ci-windows.yml` (if enabled)
+- Docs: `mkdocs.yml` and `docs/` (if enabled)
 
-1. Click **Use this template** on GitHub to create a new repo.
-2. Clone your new repo locally.
-3. (Optional) Create a Python 3.12 virtual environment:
-   ``powershell
-   py -3.12 -m venv .venv
-   .\.venv\Scripts\activate
-   ``
-4. Install tooling (for automation scripts):
-   ``powershell
-   pip install pytest ruff
-   ``
-5. Run common tasks:
-   ``powershell
-   tasks.bat lint
-   tasks.bat test
-   tasks.bat run
-   tasks.bat version
-   ``
-6. Docs (optional, MkDocs):
-   ``powershell
-   pip install mkdocs mkdocs-material
-   python -m mkdocs serve
-   ``
+## Developing the TEMPLATE (this repo)
+Windows (cmd or PowerShell):
+    tasks.bat lint
+    tasks.bat test
 
----
+macOS/Linux:
+    ./tasks.sh lint
+    ./tasks.sh test
 
-## Description
-A short explanation of what this project does.
-
-## Setup
-Steps to install or prepare the project.
-
-## Usage
-Examples of how to run or use the project.
-
-## Contributing
-Notes for contributing or extending the project.
+CI runs on all PRs (Linux + Windows). Keep main green.
 
 ## License
-Add your license here.
-
----
-
-## 🆕 New Project Checklist
-
-When you generate a new project from this template:
-
-1. Run the generator
-   - Double-click `NewProject.bat` (or run `C:\dev\project-template\NewProject.bat`).
-   - Fill in the prompts (name, description, GitHub repo, etc.).
-
-2. Activate the virtual environment
-   ``powershell
-   .venv\Scripts\activate
-   ``
-
-3. Run project tasks
-   - `tasks.bat lint` → style checks  
-   - `tasks.bat test` → run tests  
-   - `tasks.bat clean` → clear caches and build outputs  
-
-4. Docs
-   - `python -m mkdocs serve` → preview docs locally at http://127.0.0.1:8000  
-   - `python -m mkdocs build` → generate static site into `site/`  
-
-5. GitHub
-   - First run only: `gh auth login` (HTTPS, login with browser)  
-   - Template already creates and pushes the repo (private by default).  
-   - To link to a different repo, update your remote:  
-     ``powershell
-     git remote set-url origin https://github.com/<user>/<new_repo>.git
-     git push -u origin main
-     ``
-
-6. Daily workflow
-   - Edit code in `src/`  
-   - Add tests in `tests/`  
-   - Update docs in `docs/`  
-   - Use `tasks.bat` to keep everything consistent  
+This repository is the template; the generated project’s license is chosen at generation time.
