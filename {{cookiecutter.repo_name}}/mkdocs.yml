@@ -1,0 +1,12 @@
+site_name: {{ cookiecutter.project_name }} Docs
+site_description: {{ cookiecutter.description }}
+# Set repo_url later if you host on GitHub.
+repo_url: https://github.com/andyblair1230/{{ cookiecutter.repo_name }}
+theme:
+  name: material
+nav:
+  - Home: index.md
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true

@@ -1,0 +1,30 @@
+# Normalize text files to LF in the repo; Git will handle checkout conversions
+* text=auto eol=lf
+
+# Treat these as text (helps diffs)
+*.md   text
+*.toml text
+*.yml  text
+*.yaml text
+*.json text
+*.csv  text
+
+# Binary files (no diff)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
+
+# Improve diffs for common lockfiles (if used later)
+package-lock.json -diff
+yarn.lock        -diff
+poetry.lock      -diff
+Pipfile.lock     -diff
+
+# Don’t include these in source archives (if you ever make release tarballs)
+.gitignore export-ignore
+.gitattributes export-ignore
+.github/ export-ignore
