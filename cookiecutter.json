@@ -1,0 +1,16 @@
+{
+  "project_name": "My Project",
+  "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "author_name": "Andy Blair",
+  "year": "2025",
+  "description": "A short description of the project.",
+  "python_version": "3.12",
+  "setup_venv": "y",
+  "install_dev_tools": "y",
+  "install_mkdocs": "y",
+  "init_git": "y",
+  "default_branch": "main",
+  "create_github_repo": "y",
+  "github_user": "andyblair1230",
+  "private_repo": "y"
+}
