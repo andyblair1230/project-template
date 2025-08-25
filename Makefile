@@ -1,22 +1,29 @@
-# Project automation commands
-
-.PHONY: help test lint run clean
+# Project automation commands (cross-platform via tasks.sh)
+.PHONY: help setup fmt lint test run clean
 
 help:
 	@echo "Available commands:"
-	@echo "  make test   - run tests"
+	@echo "  make setup  - install deps"
+	@echo "  make fmt    - auto-format"
 	@echo "  make lint   - check code style"
+	@echo "  make test   - run tests"
 	@echo "  make run    - run the project"
 	@echo "  make clean  - remove build artifacts"
 
-test:
-    pytest -q
+setup:
+	./tasks.sh setup
+
+fmt:
+	./tasks.sh fmt
 
 lint:
-    ruff check .
+	./tasks.sh lint
+
+test:
+	./tasks.sh test
 
 run:
-    python -m src
+	./tasks.sh run
 
 clean:
-    del /Q /S dist build *.pyc
+	./tasks.sh clean
