@@ -1,16 +1,18 @@
 {
   "project_name": "My Project",
   "project_slug": "my_project",
+  "repo_name": "my-project",
   "description": "Short description",
   "author_name": "Andy",
   "github_username": "andyblair1230",
   "initial_version": "0.1.0",
-  "license": ["MIT", "Apache-2.0", "Unlicense"],
+  "license": ["MIT", "Apache-2.0", "Unlicense", "Proprietary"],
   "use_python": "y",
   "use_node": "n",
   "use_go": "n",
   "use_rust": "n",
   "use_mkdocs": "y",
   "use_ci": "y",
-  "use_devcontainer": "n"
+  "use_devcontainer": "n",
+  "init_git": "y"
 }
