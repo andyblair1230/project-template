@@ -1,5 +1,6 @@
 [tool.black]
 line-length = 100
+# Black uses REGEX here. We must escape the {{ }}.
 extend-exclude = '''
 (\{\{cookiecutter\.repo_name\}\}
 |\.venv
@@ -12,10 +13,11 @@ extend-exclude = '''
 '''
 
 [tool.ruff]
+# Ruff uses GLOB patterns here (NOT regex). List paths plainly.
 line-length = 100
 target-version = "py312"
 extend-exclude = [
-  "{{cookiecutter.repo_name}}",
+  "{{cookiecutter.repo_name}}",  # exclude the template skeleton
   ".venv",
   "dist",
   "build",
@@ -25,5 +27,5 @@ extend-exclude = [
 ]
 
 [tool.mypy]
-# keep mypy from walking into the cookiecutter skeleton
+# Mypy uses REGEX here. This is fine as-is.
 exclude = '(\{\{cookiecutter\.repo_name\}\}|\.venv|dist|build|\.mypy_cache|\.pytest_cache|\.ruff_cache)'
