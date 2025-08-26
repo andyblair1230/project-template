@@ -3,18 +3,39 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "{{ cookiecutter.repo_name }}"
-version = "0.1.0"
+name = "{{ cookiecutter.project_slug }}"
+version = "{{ cookiecutter.initial_version }}"
 description = "{{ cookiecutter.description }}"
 readme = "README.md"
 requires-python = ">=3.12"
-authors = [
-    { name = "{{ cookiecutter.author_name }}" }
-]
+authors = [{ name = "{{ cookiecutter.author_name }}" }]
 license = { file = "LICENSE" }
+dependencies = []
+
+# lets "pip install -e .[dev]" work for contributors
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "ruff>=0.12",
+  "black>=24",
+  "mypy>=1.8",
+]
 
 [tool.pytest.ini_options]
-addopts = "-q"
+addopts = "-q -ra"
+testpaths = ["tests"]
 
 [tool.ruff]
-line-length = 88
+line-length = 100
+target-version = "py312"
+exclude = ["docs", ".venv", ".mypy_cache", ".pytest_cache"]
+
+[tool.black]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_configs = true
+check_untyped_defs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
