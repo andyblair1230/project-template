@@ -28,3 +28,7 @@ out/
 
 # MkDocs build output
 site/
+
+.ruff_cache/
+.pytest_cache/
+
