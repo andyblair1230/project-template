@@ -1,34 +1,43 @@
-# OS files
+# OS
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
+# Editors/IDE
+.vscode/
+.idea/
 
-# Temporary files
+# Logs / temp
+*.log
 *.tmp
 *.swp
 
 # Python
 __pycache__/
 *.pyc
+*.pyo
 .venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+dist/
+build/
+*.egg-info/
 
 # Node.js
 node_modules/
 
-# Build artifcats
-dist/
-build/
-out/
+# Go
+bin/
+*.test
 
-# IDE/editor settings
-.vscode/
-.idea/
+# Rust
+target/
 
-# MkDocs build output
+# MkDocs
 site/
 
-.ruff_cache/
-.pytest_cache/
-
+# Misc
+.env
+.python-version
