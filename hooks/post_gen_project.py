@@ -97,9 +97,7 @@ if INIT_GIT:
         subprocess.run(["git", "init"], cwd=ROOT, check=True)
         subprocess.run(["git", "checkout", "-b", "main"], cwd=ROOT, check=False)
         subprocess.run(["git", "add", "-A"], cwd=ROOT, check=True)
-        subprocess.run(
-            ["git", "commit", "-m", "Initial scaffold"], cwd=ROOT, check=True
-        )
+        subprocess.run(["git", "commit", "-m", "Initial scaffold"], cwd=ROOT, check=True)
     except Exception as e:
         print(f"[warn] git init failed: {e}", file=sys.stderr)
 
