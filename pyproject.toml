@@ -1,20 +1,32 @@
-[build-system]
-requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "project-name"
-version = "0.1.0"
-description = "Short project description here"
-readme = "README.md"
-requires-python = ">=3.12"
-authors = [
-    { name = "Andy Blair", email = "jablair1230@gmail.com" }
-]
-license = { file = "LICENSE" }
-
-[tool.pytest.ini_options]
-addopts = "-q"
+[tool.black]
+line-length = 100
+# Black uses REGEX. Escape the braces so it ignores the skeleton.
+extend-exclude = '''
+(\{\{cookiecutter\.repo_name\}\}
+|\.venv
+|dist
+|build
+|\.mypy_cache
+|\.pytest_cache
+|\.ruff_cache
+)
+'''
 
 [tool.ruff]
-line-length = 88
+# Ruff uses GLOB patterns (not regex). Braces are special there.
+# Use a substring glob instead of literal braces.
+line-length = 100
+target-version = "py312"
+extend-exclude = [
+  "**/*cookiecutter.repo_name*",  # safely ignores the skeleton folder
+  ".venv",
+  "dist",
+  "build",
+  ".mypy_cache",
+  ".pytest_cache",
+  ".ruff_cache",
+]
+
+[tool.mypy]
+# mypy uses REGEX. Keep the escaped-brace regex (works fine).
+exclude = '(\{\{cookiecutter\.repo_name\}\}|\.venv|dist|build|\.mypy_cache|\.pytest_cache|\.ruff_cache)'
